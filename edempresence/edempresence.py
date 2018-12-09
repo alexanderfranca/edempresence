@@ -19,6 +19,12 @@ class EdemPresence:
         return int(time.time())
 
     def check_enrollment_is_number(self):
+        """
+        Check if student enrollment ID is an integer number.
+
+        Returns:
+            (bol): True or False.
+        """
 
         result = False
 
