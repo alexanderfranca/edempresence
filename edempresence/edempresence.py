@@ -5,8 +5,8 @@ class EdemPresence:
     Deals with the whole student ID recording.
     """
 
-    def __init__(self):
-        pass
+    def __init__(self, card):
+        self.card = card
 
     def timestamp(self):
         """
