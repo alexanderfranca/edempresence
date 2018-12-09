@@ -43,4 +43,6 @@ class test_edempresence(unittest.TestCase):
 
         result = self.edem.filename_exists(file_name)
 
+        os.path.remove(file_name)
+
         self.assertTrue(result)
