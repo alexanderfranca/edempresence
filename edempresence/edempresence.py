@@ -80,6 +80,14 @@ class EdemPresence:
         return result
 
     def strip_date_from_filename(self, file_name):
+        """
+        Returns only the date from the full path filename.
+
+        Typical filenam have a full path and timestamp in its name.
+
+        Returns:
+            (str): the date from the full path filename. Example: '20180512' from something like '2342434423-20180512.txt'.
+        """
 
         basename = os.path.basename(file_name)
         dirname = os.path.dirname(file_name)
