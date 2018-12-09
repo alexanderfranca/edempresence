@@ -47,3 +47,13 @@ class test_edempresence(unittest.TestCase):
         os.remove(file_name)
 
         self.assertTrue(result)
+
+    def test_strip_date_from_file_name(self):
+
+        file_name = '1544393376-20181209.txt'
+
+        result = self.edem.strip_date_from_filename(file_name)
+
+        self.assertEqual(result, '20181209')
+
+
