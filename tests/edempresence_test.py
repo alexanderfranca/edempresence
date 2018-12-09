@@ -3,7 +3,6 @@ import unittest
 class test_edempresence(unittest.TestCase):
 
     def setUp(self):
-        print('toaqui')
 
         self.edem = EdemPresence()
 
