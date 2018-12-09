@@ -12,4 +12,4 @@ class test_edempresence(unittest.TestCase):
 
         timestamp = self.edem.timestamp()
 
-        self.assertEqual(type(timestamp) is int)
+        self.assertTrue(type(timestamp) is int)
