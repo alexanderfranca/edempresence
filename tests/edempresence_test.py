@@ -35,4 +35,12 @@ class test_edempresence(unittest.TestCase):
 
         self.assertEquals(file_name_size, 23) 
 
+    def test_if_filename_exists(self):
 
+        file_name = self.edem.filename()
+
+        self.edem.create_file(file_name)
+
+        result = self.edem.filename_exists()
+
+        self.assertTrue(result)
