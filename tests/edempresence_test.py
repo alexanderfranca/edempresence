@@ -50,7 +50,7 @@ class test_edempresence(unittest.TestCase):
 
     def test_strip_date_from_file_name(self):
 
-        file_name = '1544393376-20181209.txt'
+        file_name = '/home/example/test/1544393376-20181209.txt'
 
         result = self.edem.strip_date_from_filename(file_name)
 
