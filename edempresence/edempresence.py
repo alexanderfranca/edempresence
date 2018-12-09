@@ -79,3 +79,12 @@ class EdemPresence:
 
         return result
 
+    def strip_date_from_filename(self, file_name):
+
+        basename = os.path.basename(file_name)
+        dirname = os.path.dirname(file_name)
+
+        date_and_format = basename.split('-')
+        date = date_and_format[1].split('.')
+
+        return date[0]
