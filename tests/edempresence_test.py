@@ -6,8 +6,8 @@ class test_edempresence(unittest.TestCase):
 
     def setUp(self):
 
-        self.edem = EdemPresence()
-        self.data = EdemCard(enrollment='0004324')
+        card = EdemCard(enrollment='0004324')
+        self.edem = EdemPresence(card)
 
     def test_check_timestamp_is_int(self):
 
