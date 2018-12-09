@@ -35,6 +35,14 @@ class EdemPresence:
         return result
 
     def filename(self):
+        """
+        Generates a file name that will be used to store students presence for the day.
+
+        Example: 1544391469-20081206.txt
+
+        Returns:
+            (str): file name. Format should be $timestamp-$year$month$day.txt.
+        """
 
         timestamp = self.timestamp()
         day = datetime.fromtimestamp(timestamp).strftime("%d")
