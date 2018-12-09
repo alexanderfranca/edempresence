@@ -18,3 +18,11 @@ class EdemPresence:
 
         return int(time.time())
 
+    def check_enrollment_is_number(self):
+
+        result = False
+
+        if type(self.enrollment) is int:
+            result = True
+
+        return result
