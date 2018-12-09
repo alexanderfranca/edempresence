@@ -1,4 +1,5 @@
 import unittest
+from edempresence.edempresence import EdemPresence
 
 class test_edempresence(unittest.TestCase):
 
