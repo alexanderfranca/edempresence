@@ -1,5 +1,6 @@
 import time
 from datetime import datetime
+import os
 
 class EdemPresence:
     """
@@ -62,3 +63,19 @@ class EdemPresence:
         """
 
         open(file_name, 'a').close()
+
+    def filename_exists(self, file_name):
+        """
+        Check if the file name for storing students presence already exists.
+
+        Returns:
+            (bol): True or False.
+        """
+
+        result = False
+
+        if os.path.exists(file_name):
+            result = True
+
+        return result
+
