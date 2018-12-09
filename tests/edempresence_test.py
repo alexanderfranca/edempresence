@@ -6,7 +6,7 @@ class test_edempresence(unittest.TestCase):
 
     def setUp(self):
 
-        card = EdemCard(enrollment='0004324')
+        card = EdemCard(enrollment=4324)
         self.edem = EdemPresence(card)
 
     def test_check_timestamp_is_int(self):
@@ -21,4 +21,8 @@ class test_edempresence(unittest.TestCase):
 
         self.assertTrue(type(enrollment) is int)
 
+    def test_method_if_enrollment_number_is_integer(self):
 
+        result = self.edem.check_enrollment_is_number()
+
+        self.assertTrue(result)
