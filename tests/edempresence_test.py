@@ -26,3 +26,13 @@ class test_edempresence(unittest.TestCase):
         result = self.edem.check_enrollment_is_number()
 
         self.assertTrue(result)
+
+    def test_filename_has_twenty_and_three_digits(self):
+
+        file_name = self.edem.filename()
+
+        file_name_size = len(file_name)
+
+        self.assertEquals(file_name_size, 23) 
+
+
