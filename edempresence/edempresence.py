@@ -1,4 +1,5 @@
 import time
+from datetime import datetime
 
 class EdemPresence:
     """
@@ -32,3 +33,14 @@ class EdemPresence:
             result = True
 
         return result
+
+    def filename(self):
+
+        timestamp = self.timestamp()
+        day = datetime.fromtimestamp(timestamp).strftime("%d")
+        month = datetime.fromtimestamp(timestamp).strftime("%m")
+        year = datetime.fromtimestamp(timestamp).strftime("%Y")
+
+        filename = str(timestamp) + '-' + str(year) + str(month) + str(day) + '.txt'
+
+        return filename
