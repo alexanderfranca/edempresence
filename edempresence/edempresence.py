@@ -9,6 +9,12 @@ class EdemPresence:
         pass
 
     def timestamp(self):
+        """
+        Return the timestamp in a integer format.
+
+        Returns:
+            (int): timestamp
+        """
 
         return int(time.time())
 
