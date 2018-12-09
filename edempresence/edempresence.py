@@ -52,3 +52,13 @@ class EdemPresence:
         filename = str(timestamp) + '-' + str(year) + str(month) + str(day) + '.txt'
 
         return filename
+
+    def create_file(self, file_name):
+        """
+        Create an empty file that'll store the students presence.
+
+        Args:
+            file_name(str): Full path for the file to be created.
+        """
+
+        open(file_name, 'a').close()
