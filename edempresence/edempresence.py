@@ -6,7 +6,7 @@ class EdemPresence:
     """
 
     def __init__(self, card):
-        self.card = card
+        self.enrollment = card.enrollment
 
     def timestamp(self):
         """
