@@ -17,16 +17,8 @@ class test_edempresence(unittest.TestCase):
 
     def test_if_enrollment_number_is_integer(self):
 
-        self.data1 = EdemCard(enrollment=4345)
-
-        enrollment = self.data1.enrollment
+        enrollment = self.edem.enrollment
 
         self.assertTrue(type(enrollment) is int)
 
-    def test_if_enrollment_number_is_not_integer(self):
 
-        self.data1 = EdemCard(enrollment='not_a_number')
-
-        enrollment = self.data1.enrollment
-
-        self.assertFalse(type(enrollment) is int)
