@@ -98,7 +98,6 @@ class EdemPresence:
 
         return date[0]
 
-
     def date_file_exists(self, file_name):
         """
         Check if the file that has its date part in its name exists.
@@ -107,20 +106,35 @@ class EdemPresence:
             file_name(str): full file name path.
 
         Returns:
-            (bol): True or False.
+            (str): found file name. 
         """
 
         date = self.strip_date_from_filename(file_name)
         date = str(date) + '.txt'
 
-        result = False
-
         files = glob.glob('*' + date)
 
+        result = None
+
         if len(files) > 0:
-            result = True
+            result = files[0]
 
         return result
+
+    def record_presence(self):
+
+        filename = self.filename()
+
+        date_file_name = self.strip_date_from_filename(filename)
+
+        if not self.date_file_exists(filename):
+            self.create_file(filename)
+
+        if self.date_file_exists(filename):
+            pass
+            #record = open(filename, 'a')
+
+
 
 
 
