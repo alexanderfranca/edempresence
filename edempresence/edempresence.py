@@ -126,6 +126,8 @@ class EdemPresence:
         Record the student enrollment and timestamp to the destination record file.
         """
 
+        result = {}
+
         filename = self.filename()
 
         date_file_name = self.strip_date_from_filename(filename)
@@ -137,9 +139,11 @@ class EdemPresence:
             found_file = filename
 
         with open(found_file, 'a') as record:
-            record.write(str(self.enrollment) + ':' + str(self.timestamp()) + "\n")
+            timestamp = self.timestamp()
+            record.write(str(self.enrollment) + ':' + str(timestamp) + "\n")
+            result = { 'enrollment': self.enrollment, 'timestamp': timestamp, 'file': filename }
 
-
+        return result
 
 
 
