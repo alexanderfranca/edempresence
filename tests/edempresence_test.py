@@ -70,6 +70,10 @@ class test_edempresence(unittest.TestCase):
 
     def test_record_presence(self):
 
-        self.edem.record_presence()
+        result = self.edem.record_presence()
+
+        self.assertTrue('file' in result.keys())
+
+        os.remove(result['file'])
 
 
