@@ -100,6 +100,15 @@ class EdemPresence:
 
 
     def date_file_exists(self, file_name):
+        """
+        Check if the file that has its date part in its name exists.
+
+        Args:
+            file_name(str): full file name path.
+
+        Returns:
+            (bol): True or False.
+        """
 
         date = self.strip_date_from_filename(file_name)
         date = str(date) + '.txt'
