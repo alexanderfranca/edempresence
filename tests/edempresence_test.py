@@ -66,8 +66,10 @@ class test_edempresence(unittest.TestCase):
 
         os.remove(file_name)
 
-        self.assertTrue(result)
+        self.assertTrue(type(result) is str)
 
+    def test_record_presence(self):
 
+        self.edem.record_presence()
 
 
