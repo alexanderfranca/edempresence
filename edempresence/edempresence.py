@@ -127,12 +127,14 @@ class EdemPresence:
 
         date_file_name = self.strip_date_from_filename(filename)
 
-        if not self.date_file_exists(filename):
-            self.create_file(filename)
+        found_file = self.date_file_exists(filename)
 
-        if self.date_file_exists(filename):
-            pass
-            #record = open(filename, 'a')
+        if not found_file:
+            self.create_file(filename)
+            found_file = filename
+
+        with open(found_file, 'a') as record:
+            record.write(str(self.enrollment) + ':' + str(self.timestamp()) + "\n")
 
 
 
