@@ -56,4 +56,18 @@ class test_edempresence(unittest.TestCase):
 
         self.assertEqual(result, '20181209')
 
+    def test_check_if_date_file_exists(self):
+
+        file_name = './1544393376-20181209.txt'
+
+        self.edem.create_file(file_name)
+
+        result = self.edem.date_file_exists(file_name)
+
+        os.remove(file_name)
+
+        self.assertTrue(result)
+
+
+
 
