@@ -122,6 +122,9 @@ class EdemPresence:
         return result
 
     def record_presence(self):
+        """
+        Record the student enrollment and timestamp to the destination record file.
+        """
 
         filename = self.filename()
 
