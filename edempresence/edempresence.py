@@ -1,4 +1,5 @@
 import time
+import glob
 from datetime import datetime
 import os
 
@@ -96,3 +97,22 @@ class EdemPresence:
         date = date_and_format[1].split('.')
 
         return date[0]
+
+
+    def date_file_exists(self, file_name):
+
+        date = self.strip_date_from_filename(file_name)
+        date = str(date) + '.txt'
+
+        result = False
+
+        files = glob.glob('*' + date)
+
+        if len(files) > 0:
+            result = True
+
+        return result
+
+
+
+
