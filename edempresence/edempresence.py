@@ -168,6 +168,15 @@ class EdemPresence:
         return presence_data
 
     def write_external_presence_data(self, data):
+        """
+        Write into the external file (third part software) the full student presence data (in the third part software required format).
+
+        Args:
+            data(dict): a dictionary containing the data to be delivered to the file.
+
+        Returns:
+            (str): the last line inserted into the file.
+        """
 
         with open(self.external_file.filepath, 'a') as external_file:
             external_file.write(str(data['act']) + ',' + str(data['day']) + "," + str(data['month']) + "," + str(data['year']) + "," + str(data['hour']) + "," + str(data['minute']) + "," + str(data['second']) + "," + str(data['enrollment']) + "\n")
