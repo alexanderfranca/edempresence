@@ -10,6 +10,7 @@ class EdemPresence:
 
     def __init__(self, card, external_file=None):
         self.enrollment = card.enrollment
+        self.external_file = external_file
 
     def timestamp(self):
         """
@@ -166,5 +167,15 @@ class EdemPresence:
 
         return presence_data
 
+    def write_external_presence_data(self, data):
+
+        with open(self.external_file.filepath, 'a') as external_file:
+            external_file.write(str(data['act']) + ',' + str(data['day']) + "," + str(data['month']) + "," + str(data['year']) + "," + str(data['hour']) + "," + str(data['minute']) + "," + str(data['second']) + "," + str(data['enrollment']) + "\n")
+
+
+        with open(self.external_file.filepath) as external_file:
+            lines = external_file.readlines()
+
+        return lines[-1]
 
 
