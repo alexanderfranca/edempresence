@@ -2,13 +2,16 @@ import os
 import unittest
 from edempresence.edempresence import EdemPresence
 from edempresence.edemcard import EdemCard
+from edempresence.edemexternalfile import EdemExternalFile
 
 class test_edempresence(unittest.TestCase):
 
     def setUp(self):
 
         card = EdemCard(enrollment=4324)
-        self.edem = EdemPresence(card)
+        external_file = EdemExternalFile(filepath='./record.txt')
+
+        self.edem = EdemPresence(card=card, external_file=external_file)
 
     def test_check_timestamp_is_int(self):
 
@@ -76,4 +79,8 @@ class test_edempresence(unittest.TestCase):
 
         os.remove(result['file'])
 
+    def test_generate_full_presence_record_has_enrollment(self):
 
+        data = self.edem.generate_full_presence_record()
+
+        self.assertTrue('enrollment' in data.keys())
