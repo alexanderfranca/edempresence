@@ -84,3 +84,14 @@ class test_edempresence(unittest.TestCase):
         data = self.edem.generate_full_presence_record()
 
         self.assertTrue('enrollment' in data.keys())
+
+    def test_generate_full_presence_record_write_data_into_file(self):
+
+        data = self.edem.generate_full_presence_record()
+
+        last_line = self.edem.write_external_presence_data(data)
+
+        os.remove(self.edem.external_file.filepath)
+
+        self.assertTrue(type(last_line) is str)
+
