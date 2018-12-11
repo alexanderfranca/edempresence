@@ -146,6 +146,13 @@ class EdemPresence:
         return result
 
     def generate_full_presence_record(self):
+        """
+        Generate a full data structure containing all the data (for students presence) required by third part software.
+
+        Returns:
+            (dict): student presence data (enrollment, day, year, action etc).
+
+        """
 
         timestamp = self.timestamp()
         day = datetime.fromtimestamp(timestamp).strftime("%d")
