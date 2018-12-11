@@ -145,6 +145,19 @@ class EdemPresence:
 
         return result
 
+    def generate_full_presence_record(self):
+
+        timestamp = self.timestamp()
+        day = datetime.fromtimestamp(timestamp).strftime("%d")
+        month = datetime.fromtimestamp(timestamp).strftime("%m")
+        year = datetime.fromtimestamp(timestamp).strftime("%Y")
+        hour = datetime.fromtimestamp(timestamp).strftime("%H")
+        minute = datetime.fromtimestamp(timestamp).strftime("%M")
+        second = datetime.fromtimestamp(timestamp).strftime("%s")
+
+        presence_data = { 'act': '01', 'day': day, 'month': month, 'year': year, 'hour': hour, 'minute': minute, 'second': second, 'enrollment': self.enrollment }
+
+        return presence_data
 
 
 
