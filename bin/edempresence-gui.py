@@ -24,25 +24,27 @@ class EdemPresenceGUI():
 
 
         top = self.top = tk.Toplevel(parent)
-        self.myEntryBox = tk.Entry(top, width=6)
+        self.myEntryBox = tk.Entry(root, width=6)
         self.myEntryBox.config(font=("Courier", 44, 'bold'))
         self.myEntryBox.bind("<Return>", self.show_student_picture)
 
         self.myEntryBox.focus_set()
-        self.myEntryBox.grid(row=0,column=0)
+        self.myEntryBox.pack()
 
-        Button(root, text="SAIR", command=root.destroy).grid(row=0,column=0)
+        Button(root, text="SAIR", command=root.destroy).pack()
 
     def show_student_picture(self, event):
 
-        self.canvas = Canvas(root, width=600, height=600)
+        self.canvas = Canvas(root, width=400, height=400)
 
         picture = self.configs['photos_directory'] + '/' + str(self.myEntryBox.get()) + '.jpg'
 
+        print(picture)
         if not os.path.exists(picture):
             picture = os.getcwd() + '/default_picture/default.jpg'
 
         im = Image.open(picture)
+        im = im.resize((400, 400), Image.ANTIALIAS)
         self.canvas.image = ImageTk.PhotoImage(im)
         self.canvas.create_image(0, 0, image=self.canvas.image, anchor='nw')
 
@@ -51,7 +53,7 @@ class EdemPresenceGUI():
         data = self.edempresence.generate_full_presence_record()
         self.edempresence.write_external_presence_data(data)
 
-        self.canvas.grid(row=2, column=0)
+        self.canvas.pack()
 
         self.myEntryBox.focus_set()
         self.myEntryBox.delete(0, 'end')
