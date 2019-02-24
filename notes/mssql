@@ -1,0 +1,26 @@
+Sophia> SELECT COLUMN_NAME 
+....... FROM INFORMATION_SCHEMA.COLUMNS
+....... WHERE TABLE_NAME = 'horarios_catraca' AND TABLE_SCHEMA='sophia';
++---------------------+
+| COLUMN_NAME         |
+|---------------------|
+| ID_HORARIOS_CATRACA |
+| HORARIO             |
++---------------------+
+
+
+Sophia> SELECT COLUMN_NAME 
+....... FROM INFORMATION_SCHEMA.COLUMNS
+....... WHERE TABLE_NAME = 'REGISTRO_ACESSO' AND TABLE_SCHEMA='sophia';
++--------------------+
+| COLUMN_NAME        |
+|--------------------|
+| ID_ACESSO          |
+| IDFK_FUNCIONARIO   |
+| DATA_ENTRADA       |
+| DATA_SAIDA         |
+| TEMPO_TOTAL_ACESSO |
++--------------------+
+
+
+

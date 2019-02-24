@@ -1,0 +1,8 @@
+operação(01=entrada, 02=saida)
+dia
+mes
+ano
+hora
+minuto
+segundo
+número do crachá (15 dígitos)
