@@ -1,5 +1,5 @@
 install-deps:
-	yaml
+	pip3 install -r requirements.txt
 
 test:
 	export PYTHONPATH=.; \

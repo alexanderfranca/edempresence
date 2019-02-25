@@ -1,5 +1,5 @@
 photos_directory:
-    '/home/alexander/'
+    '/mnt/FOTOS/'
 
 save_to_file:
-    '/home/alexander/'
+    '/home/portaria/presence_record/'
